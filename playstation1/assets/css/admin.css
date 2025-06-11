@@ -1,0 +1,282 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url('../img/back.jpg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Orbitron', sans-serif !important;
+    margin: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: rgba(17, 17, 17, 0.9);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-brand span:first-child {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ff6600;
+}
+
+.navbar-brand .role {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navbar-actions .username {
+    font-size: 1em;
+    color: #fff;
+}
+
+.navbar-actions .logout-btn {
+    color: #ff2222;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border: 2px solid #ff2222;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.navbar-actions .logout-btn:hover {
+    background-color: #ff2222;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 34, 34, 0.5);
+}
+
+/* Dashboard Container */
+.dashboard-container {
+    padding: 80px 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+.dashboard-title {
+    font-size: 2.5em;
+    color: #ff6600;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(255, 102, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 30px;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+/* PlayStation Section */
+.ps-section,
+.games-section {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.ps-card {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border: 2px solid transparent;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    color: #fff;
+}
+
+.ps-card.available {
+    border-color: #00ff00;
+    box-shadow: 0 0 15px rgba(0, 255, 0, 0.5);
+}
+
+.ps-card.unavailable {
+    border-color: #ff3333;
+    box-shadow: 0 0 15px rgba(255, 51, 51, 0.5);
+}
+
+.ps-card:hover {
+    transform: translateY(-5px);
+    background: rgba(50, 50, 50, 0.7);
+    box-shadow: 0 8px 24px rgba(255, 102, 0, 0.5);
+}
+
+.ps-name {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.ps-status {
+    font-size: 1em;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+.ps-status.unavailable {
+    color: #ff3333;
+}
+
+/* payment */
+
+.payment-card {
+    position: relative;
+    min-height: 600px;
+    /* Increase height to make border longer */
+    border: 4px solid #00ff00;
+    /* Thicker border for prominence */
+    box-shadow: 0 0 20px #00ff00, 0 0 30px rgba(0, 255, 0, 0.5);
+    /* Stronger glow */
+    padding-top: 20px;
+}
+
+.payment-card::before {
+    content: '';
+    position: absolute;
+    top: -15px;
+    /* Extend beyond the top */
+    left: -15px;
+    /* Extend beyond the left */
+    right: -15px;
+    /* Extend beyond the right */
+    bottom: -15px;
+    /* Extend beyond the bottom */
+    border: 2px solid rgba(0, 255, 0, 0.5);
+    /* Outer semi-transparent border */
+    border-radius: 14px;
+    /* Match the card’s rounded corners */
+    z-index: -1;
+    /* Place behind the card */
+}
+
+.payment-card form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align content from the top */
+    width: 100%;
+}
+
+.payment-card .mb-3 {
+    margin-bottom: 1.5rem;
+    /* Increase space between fields for better separation */
+}
+
+.col-md-3 {
+    padding: 20px;
+    /* Add space to prevent overlap */
+}
+
+/* Games Section */
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.game-card {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(255, 102, 0, 0.5);
+    border: 2px solid #ff6600;
+}
+
+.game-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid #ff6600;
+}
+
+.game-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.game-info h5 {
+    font-size: 1.1em;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.game-info p {
+    font-size: 0.9em;
+    color: #ccc;
+}
+
+/* No Data Message */
+.no-data {
+    font-size: 1.2em;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Dropdown menu custom for admin */
+.dropdown-menu {
+    background-color: #fff !important;
+    color: #111 !important;
+    border-radius: 10px;
+    min-width: 160px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.dropdown-menu .dropdown-item {
+    color: #111 !important;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+    background: none;
+    transition: background 0.2s, color 0.2s;
+}

@@ -1,0 +1,344 @@
+/* General Styling */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif !important;
+    background-color: #000;
+    color: #fff;
+    /* Pastikan teks default putih */
+}
+
+/* Pastikan semua section punya background hitam */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000;
+}
+
+/* Override untuk section spesifik */
+#games,
+#fasilitas,
+#ketersediaan,
+#booking,
+#booking_onsite,
+#riwayat,
+#kontak {
+    background-color: #000;
+    color: #fff;
+    /* Pastikan teks putih */
+}
+
+/* Hero Section */
+#hero {
+    background: url('../img/back.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000;
+    color: #fff;
+    /* Teks putih */
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    z-index: 1;
+    padding-top: 100px;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: #111;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    color: #f0f0f0;
+}
+
+nav a {
+    color: #fff;
+    /* Teks putih */
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* Dropdown */
+.dropdown-item {
+    padding: 5px 10px;
+    display: block;
+    color: #000;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-divider {
+    border-top: 1px solid #ccc;
+    margin: 5px 0;
+}
+
+/* Hero Elements */
+.logo {
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: #fff;
+    /* Teks putih */
+}
+
+.subtext {
+    font-size: 24px;
+    color: orange;
+    letter-spacing: 2px;
+}
+
+.scroll-down {
+    margin-top: 40px;
+    font-size: 24px;
+}
+
+/* Grid for PlayStation */
+.ps-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.ps-card {
+    background-color: #111;
+    border: 3px solid #444;
+    width: 150px;
+    height: 130px;
+    padding: 15px;
+    color: #fff;
+    /* Teks putih */
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.2s ease, background-color 0.3s;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+.ps-card.available {
+    border-color: #00ff00;
+}
+
+.ps-card.unavailable {
+    border-color: #ff3333;
+}
+
+.ps-card:hover {
+    transform: scale(1.08);
+    background-color: #1c1c1c;
+}
+
+.ps-card .icon {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.ps-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+    /* Teks putih */
+}
+
+.ps-type {
+    font-size: 12px;
+    color: #fff;
+    /* Ubah dari #888 ke #fff */
+    margin-top: 3px;
+}
+
+.ps-status {
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+    /* Ubah dari #ccc ke #fff */
+}
+
+.ps-status.unavailable {
+    color: #ff3333;
+    /* Tetap merah untuk status unavailable */
+}
+
+/* Games Section */
+#games {
+    padding: 60px 20px;
+    background-color: #000;
+    /* Ubah dari #111 ke #000 */
+    text-align: center;
+}
+
+.scroll-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    overflow-x: unset;
+    padding-bottom: 10px;
+    scroll-snap-type: none;
+    margin-top: 32px;
+}
+
+.scroll-wrapper::-webkit-scrollbar {
+    height: 8px;
+}
+
+.scroll-wrapper::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 10px;
+}
+
+.game-card {
+    flex: 0 0 auto;
+    width: 180px;
+    background-color: #1c1c1c;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+    scroll-snap-align: start;
+    transition: transform 0.3s ease;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    border: 2px solid #ff6600;
+    box-shadow: 0 0 15px #ff6600;
+}
+
+.game-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    border-bottom: 2px solid #333;
+}
+
+.game-info {
+    padding: 10px;
+}
+
+.game-info h5 {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.game-info small {
+    color: #fff;
+    /* Ubah dari #aaa ke #fff */
+    font-size: 12px;
+}
+
+/* Styling untuk Login dan Logout */
+.register-container {
+    background: url('../img/bground.jpg') no-repeat center center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 20px;
+    box-sizing: border-box;
+}
+
+.glass-card {
+    background: rgba(30, 30, 30, 0.7);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 24px rgba(206, 54, 155, 0.4);
+    padding: 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.glass-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 600;
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    color: #fff;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: all 0.3s ease;
+    box-shadow: none;
+}
+
+.form-control::placeholder {
+    color: #fff;
+    /* Ubah dari #ccc ke #fff */
+}
+
+.btn-danger {
+    transition: all 0.3s ease;
+    background-color: #e63946;
+    border: none;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.btn-danger:hover {
+    background-color: #d62839;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(230, 57, 70, 0.4);
+}
+
+.message {
+    margin-top: 15px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    color: #ff2222;
+}
+
+.logout-message {
+    color: #fff;
+    /* Teks putih */
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
+
+a.text-danger {
+    color: #ff2222 !important;
+}
+
+a.text-danger:hover {
+    color: #d62839 !important;
+}
